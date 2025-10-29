@@ -3,7 +3,7 @@
 ## Authors
 - Srujan Gowda Sathiganahally Jagadeesha — sathigan@usc.edu
 - Reda Boutayeb — boutayeb@usc.edu
-- Rohit Milind Sonawane — rohit@usc.edu
+- Rohit Milind Sonawane — rsonawan@usc.edu
 
 ---
 
