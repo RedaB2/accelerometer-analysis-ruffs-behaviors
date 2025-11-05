@@ -2,14 +2,11 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #' 
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #'
 #' Purpose: 
 #'      Helper functions for preprocessing accelerometer data. See cleaning.R
 #'
-#' Date created:
-#'      May 2, 2023
-#'      
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 library(dplyr)
 library(ggplot2)

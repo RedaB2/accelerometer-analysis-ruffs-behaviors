@@ -2,14 +2,11 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #' 
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #'
 #' Purpose: 
 #'      Helper functions for implementing sliding windows. See windowing.R
 #'
-#' Date created:
-#'      May 2, 2023
-#'      
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 library(dtw)
 library(moments)
@@ -438,7 +435,7 @@ get_power_features <- function(df, sr, maxfreq, fft_nbins){
 #'
 #' Detrending removes any linearly increasing or decreasing trend from 
 #' the series. It is a recommended step to be done before computing the power 
-#' spectral density (PSD). Code from Fehlmann et al. 2017
+#' spectral density (PSD) in this workflow.
 #' @param series
 #' @return
 detrend_time_series <- function(series){
@@ -451,7 +448,7 @@ detrend_time_series <- function(series){
 #' 
 #' Computes power spectral density from the output of the fft() function. The 
 #' first element of fft() output is the constant/DC component, so labels for 
-#' the PSD start at 0Hz. Code from Fehlmann et al. 2017's supplement
+#' the PSD start at 0Hz. This mirrors the processing used in our analyses.
 #' 
 #' Usage: 
 #'  PSD <- my_series |> detrend_time_series |> fft |> FFT_to_PSD(acc_sr)
@@ -521,4 +518,3 @@ calc.mdf <- function (psd, prop = 0.5){
 
     psd[which.min(abs(cumsum(psd$power) - total_power*prop)),'freq_Hz']
 }
-

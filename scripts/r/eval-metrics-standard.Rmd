@@ -1,6 +1,9 @@
 ---
 title: "Model evaluation: Precision, recall, F1-scores and correlations"
-author: Anne Aulsebrook
+author:
+  - Reda Boutayeb
+  - Srujan Gowda Sathiganahally Jagadeesha
+  - Rohit Milind Sonawane
 output: 
   rmdformats::robobook:
     toc_depth: 2
@@ -17,7 +20,6 @@ output:
 
 *Notes*: The notebook is designed to be run separately for 1) all original classes, and 2) reduced classes. For reduced classes, mating behaviours are combined into a single class, as are rest and vigilance. Please note that some parts of this script are tailored specifically for particular model outputs, comparisons and naming conventions, and would need to be modified for other studies. 
 
-*Date created*: May 9 2023
 
 # Set up workspace
 
@@ -381,6 +383,37 @@ if(behaviours=="reduced") {
 }
 ```
 
+```{r Median-filter smoothing for sequential predictions}
+smooth_pred_median <- function(df, k=5, group_cols=c('recording_id','segment_id'), order_col='window_start') {
+    if(!('pred_beh' %in% names(df)) || !(order_col %in% names(df))) return(df)
+    if(is.na(k) || k < 1) k <- 5
+    if(k %% 2 == 0) k <- k + 1
+    levs <- levels(as.factor(df$pred_beh))
+    df$pred_beh <- factor(df$pred_beh, levels = levs)
+    present_groups <- intersect(group_cols, names(df))
+    if(length(present_groups) > 0){
+        df <- df %>%
+            group_by(across(all_of(present_groups))) %>%
+            arrange(.data[[order_col]], .by_group = TRUE) %>%
+            mutate(.pred_idx = as.integer(pred_beh),
+                   .pred_idx_s = as.integer(round(stats::runmed(.pred_idx, k = k, endrule = "median"))),
+                   .pred_idx_s = pmax(1L, pmin(length(levs), .pred_idx_s)),
+                   pred_beh = factor(levs[.pred_idx_s], levels = levs)) %>%
+            ungroup() %>%
+            select(-.pred_idx, -.pred_idx_s)
+    } else {
+        df <- df %>%
+            arrange(.data[[order_col]]) %>%
+            mutate(.pred_idx = as.integer(pred_beh),
+                   .pred_idx_s = as.integer(round(stats::runmed(.pred_idx, k = k, endrule = "median"))),
+                   .pred_idx_s = pmax(1L, pmin(length(levs), .pred_idx_s)),
+                   pred_beh = factor(levs[.pred_idx_s], levels = levs)) %>%
+            select(-.pred_idx, -.pred_idx_s)
+    }
+    return(df)
+}
+```
+
 # Hidden Markov models
 
 ```{r Import hmm predictions}
@@ -414,6 +447,11 @@ if(behaviours=="reduced") {
     hmm_test_predictions$truth_beh <- reduce_beh(hmm_test_predictions$original_truth)
     hmm_test_predictions$pred_beh <- reduce_beh(hmm_test_predictions$original_pred)
 }
+```
+
+```{r Apply median smoothing to HMM predictions}
+hmm_cv_predictions <- smooth_pred_median(hmm_cv_predictions, k = 5)
+hmm_test_predictions <- smooth_pred_median(hmm_test_predictions, k = 5)
 ```
 
 ```{r Save hmm predictions}
@@ -541,6 +579,10 @@ if(behaviours=="reduced") {
     rf_predictions$truth_beh <- reduce_beh(rf_predictions$original_truth)
     rf_predictions$pred_beh <- reduce_beh(rf_predictions$original_pred)
 }
+```
+
+```{r Apply median smoothing to RF CV predictions}
+rf_predictions <- smooth_pred_median(rf_predictions, k = 5)
 ```
 
 For the purpose of this study, we were particularly interested in model performance for mating behaviours. In addition to looking at metrics across all behaviours, we therefore also looked at metrics for mating behaviours (our "target" behaviours).
@@ -874,6 +916,16 @@ if(behaviours=="reduced") {
 }
 ```
 
+```{r Apply median smoothing to RF test predictions}
+rf_test_predictions <- smooth_pred_median(rf_test_predictions, k = 5)
+```
+
+```{r Save smoothed RF test predictions}
+write.csv(rf_test_predictions, 
+          file=here(output_dir, glue("best_RF_test-predictions_{output_suffix}.csv")),
+          row.names=FALSE)
+```
+
 ```{r Get rf class metrics for test set}
 setDT(rf_test_predictions)
 
@@ -978,6 +1030,19 @@ if(behaviours=="reduced") {
     nn_predictions$truth_beh <- reduce_beh(nn_predictions$original_truth)
     nn_predictions$pred_beh <- reduce_beh(nn_predictions$original_pred)
 }
+```
+
+```{r Apply median smoothing to NN predictions}
+nn_predictions <- smooth_pred_median(nn_predictions, k = 5, group_cols=c('segment_id'), order_col='window_start_time')
+```
+
+```{r Save smoothed NN predictions}
+nn_predictions_top <- nn_predictions %>%
+    filter(model_id==nn_macro_top$model_id)
+
+write.csv(nn_predictions_top, 
+          here(output_dir, glue("NN_CV_predictions_{output_suffix}.csv")),
+          row.names=FALSE)
 ```
 
 ```{r Calculate nn class metrics}

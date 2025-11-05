@@ -2,7 +2,7 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #' 
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #'
 #' Purpose: 
 #'      This is an interactive script to explore the distributions of features
@@ -17,8 +17,6 @@
 #' Notes:
 #'      Room to improve the efficiency of this process, but it gets the job done
 #' 
-#' Date Created: 
-#'      May 2, 2023
 #' 
 #' Output:
 #'      Distributions and transformations for each feature are exported to:

@@ -1,8 +1,12 @@
 ##################################################
 # All functions related to applying sliding window on a dataset
 ##################################################
-# Author: Marius Bock
-# Email: marius.bock(at)uni-siegen.de
+# Author: Reda Boutayeb
+# Email: boutayeb@usc.edu
+# Author: Srujan Gowda Sathiganahally Jagadeesha
+# Email: sathigan@usc.edu
+# Author: Rohit Milind Sonawane
+# Email: rsonawan@usc.edu
 ##################################################
 
 import numpy as np

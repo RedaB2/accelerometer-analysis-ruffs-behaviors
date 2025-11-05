@@ -2,7 +2,7 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #' 
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #'
 #' Purpose: 
 #'       This script creates train/test sets and cross-validation folds using 
@@ -32,8 +32,6 @@
 #'      point, and event id is ignored. The quantiled chunks are simply split 
 #'      into folds to roughly balance the number of behaviours in each fold
 #'             
-#' Date Created: 
-#'      May 2, 2023
 #' 
 #' Output:
 #'      Specification of the time-stratification folds exported to:

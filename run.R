@@ -2,7 +2,7 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #' 
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #' 
 #' Data are available at:
 #' https://edmond.mpdl.mpg.de/privateurl.xhtml?token=3c5da533-d851-4988-994c-f984c5f1b1a4
@@ -22,8 +22,6 @@
 #'      Package management with Renv. Install all required R packages by running
 #'      renv::restore().
 #'      
-#' Date created:
-#'      May 2, 2023
 #'      
 # ~~~~~~~~~~~~~~  Analysis Code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~----
 library(here)

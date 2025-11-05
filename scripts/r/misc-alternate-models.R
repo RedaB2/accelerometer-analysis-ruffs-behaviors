@@ -2,7 +2,7 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #'
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #' 
 #' Purpose: 
 #'      This script runs alternate machine learning models (e.g. XGboost, SVM)
@@ -10,7 +10,6 @@
 #'      building and hyperparameter tuning but rather just show a ballpark 
 #'      comparison of models using fairly standard parameters.
 #'      
-#' Date Created: 2023-08-02
 #'
 # ~~~~~~~~~~~~~~~ 1. Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~----
 (start <- Sys.time())

@@ -21,20 +21,14 @@
 #' Notes:
 #'      Recommended running with GPU. If memory allocation errors, then try
 #'      using a smaller batch size (edit parameters.batch_size in this script)
-#'      This code is modified from Bock et al.'s (2021) implementation 
-#'      available at: https://github.com/mariusbock/dl-for-har
-#'
-#'      Bock et al.'s original script has more functionality, such as customising
-#'      all parameters through command line arguments, but this was greatly 
-#'      simplified. Several other changes were made to the pipeline such as 
-#'      implementing windowing prior to cross-validation, changing log  
-#'      output paths, and several other minor changes. Some parts of the 
-#'      codebase were retained in this repository but are unused.
+#'      The implementation streamlines the deep learning workflow described for
+#'      Aulsebrook, Jacques-Hamilton, & Kempenaers (2023), including windowing
+#'      prior to cross-validation, updated logging paths, and simplified 
+#'      parameter handling. Some legacy utilities remain in the repository but
+#'      are unused here.
 #'      
 #'      Built with python 3.10, but likely works python 3.7+ (not tested)
 #'
-#' Date created:
-#'      May 2, 2023
 #'      
 # ~~~~~~~~~~~~~~ Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~----
 import pyprojroot

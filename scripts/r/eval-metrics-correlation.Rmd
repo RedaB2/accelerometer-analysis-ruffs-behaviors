@@ -1,6 +1,9 @@
 ---
 title: 'Model evaluation: Correlation coefficients'
-author: Anne Aulsebrook
+author:
+  - Reda Boutayeb
+  - Srujan Gowda Sathiganahally Jagadeesha
+  - Rohit Milind Sonawane
 output: 
   rmdformats::robobook:
     toc_depth: 2
@@ -17,7 +20,6 @@ The following steps are included:
 * Calculate Spearman's correlation coefficient
 * Save counts and coefficients
 
-*Date created*: May 10 2023
 
 ```{r Load packages}
 library(dplyr)

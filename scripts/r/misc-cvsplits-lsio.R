@@ -2,7 +2,7 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #' 
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #'
 #' Purpose: 
 #'       This script is used to  explore and create cross-validation folds for 
@@ -22,8 +22,6 @@
 #'       remaining birds were assigned to one of those folds in a way that 
 #'       balanced the class distributions as well as possible. 
 #'       
-#' Date Created: 
-#'      May 2, 2023
 #' 
 #' Output:
 #'      Specification of the leave-some-individuals-out folds exported to:

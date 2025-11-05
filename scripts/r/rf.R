@@ -2,7 +2,7 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #'
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #' 
 #' Purpose: 
 #'      This script runs a grid of random forest models. All models can be run 
@@ -18,7 +18,6 @@
 #'          -timestrat (only runs timestrat models)
 #'          -randstrat (only runs random-stratified models) 
 #' 
-#' Date Created: 2022-10-04
 #'
 #' Outputs: 
 #'      Predictions and model metrics for each validation fold are exported to:

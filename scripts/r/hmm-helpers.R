@@ -2,13 +2,12 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #' 
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #'
 #' Purpose: 
 #'      Helper functions for hidden markov models. See hmm.R
 #'
 #' Date created:
-#'      May 2, 2023
 #' 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -44,7 +43,7 @@ get_trans_mat <- function(class_seq, classes){
 
 #' Run Viterbi Algorithm
 #' 
-#' Function taken from Leos-Barajas et al. 2017. 
+#' Implementation of the Viterbi algorithm used in this project. 
 #' 
 #' @param x the input sequence (sequence of feature values)
 #' @param m the number of possible states (behaviours)

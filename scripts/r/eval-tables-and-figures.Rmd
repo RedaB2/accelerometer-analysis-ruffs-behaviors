@@ -1,6 +1,9 @@
 ---
 title: "Creating tables and figures for publication"
-authors: Anne Aulsebrook
+authors:
+  - Reda Boutayeb
+  - Srujan Gowda Sathiganahally Jagadeesha
+  - Rohit Milind Sonawane
 output: 
   rmdformats::robobook:
     toc_depth: 2
@@ -9,7 +12,6 @@ output:
 
 *Purpose*: This notebook is used to create the tables and figures included in the manuscript.
 
-*Date created*: May 10 2023
 
 ```{r Set up packages and workspace}
 library(data.table) # for fread

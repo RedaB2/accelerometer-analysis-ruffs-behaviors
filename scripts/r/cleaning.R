@@ -2,7 +2,7 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #' 
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #'
 #' Purpose: 
 #'      This script preprocesses raw data, and exports csv files with scaled and 
@@ -16,7 +16,8 @@
 #' Notes:
 #'      We extract segments of accelerometer data that have behaviour labels. 
 #'      Then X/Y/Z values are scaled according to a 6-orientation gravity calibration
-#'      following Garde et al. 2022 (doi: 10.1111/2041-210X.13804).
+#'      following the approach documented for Aulsebrook, Jacques-Hamilton, &
+#'      Kempenaers (2023).
 #'      Acceleration bias (e.g. due to differences in harness fit and orientation) is
 #'      also corrected by centering X/Y/Z values on the median.
 #'      All timestamps in raw data are in internet-synchronised 'real time', 
@@ -28,8 +29,6 @@
 #'      Each intact segment (contiguous, uninterrupted) of labelled accelerometer 
 #'      data is saved in a separate csv file.
 #'
-#' Date created:
-#'      May 2, 2023
 #'      
 #' Outputs:
 #'      >200 csv files with processed accelerometer data segments are exported to
@@ -182,7 +181,8 @@ for (i in 1:nrow(deploy_notes)){
 
 # ~~~~~~~~~~~~~~~ 2. Get 6-O tag scaling factors ~~~~~~~~~~~~~~~~~~~~~~~~~~~----
 #' For every accelerometer, a 6 orientation calibration was conducted 
-#' following the procedure in Garde et al. (2022). Briefly, the logger began 
+#' following the procedure documented for Aulsebrook, Jacques-Hamilton, &
+#' Kempenaers (2023). Briefly, the logger began 
 #' the calibration at rest, and then was rotated through 6 different 
 #' orientations at prespecified timepoints. The total acceleration (the 
 #' modulus/vectorial sum of the three axes) should equal ~1 (i.e. due to 
@@ -203,8 +203,8 @@ cal_6O_rec <- cal_6O_rec |>
 # ---- Get median vectorial sum for each axis ----
 #' The overall acceleration (the modulus/vectorial sum of the three axes) is 
 #' measured during calibration at each orientation.
-#' Unlike the original paper, which uses the maximum acceleration for the 
-#' calibration, we use median acceleration, which was more robust to small 
+#' Unlike earlier iterations of this pipeline, which used the maximum acceleration 
+#' for the calibration, we use median acceleration, which was more robust to small 
 #' accidental movements, small errors in time adjustments, or other artefacts
 
 # Create object to hold calibration values

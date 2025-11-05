@@ -22,7 +22,7 @@ Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour u
 
 Dataset available at <https://edmond.mpdl.mpg.de/privateurl.xhtml?token=3c5da533-d851-4988-994c-f984c5f1b1a4>
 
-Scripts to accompany the analysis are available at <https://github.com/rowanjh/behav-acc-ml>
+Scripts to accompany the analysis are available at <https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors>
 
 The dataset includes two zip files, `raw-data-db.zip`, and `raw-data-other.zip`, described below
 

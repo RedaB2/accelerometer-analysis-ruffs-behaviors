@@ -1,10 +1,13 @@
 ##################################################
-# Pytorch implementation (with extensions) of the DeepConvLSTM as proposed by by Ordonez and Roggen (https://www.mdpi.com/1424-8220/16/1/115)
+# Pytorch implementation (with extensions) of the DeepConvLSTM architecture used in this project
 ##################################################
-# Author: Marius Bock
-# Email: marius.bock(at)uni-siegen.de
+# Author: Reda Boutayeb
+# Email: boutayeb@usc.edu
+# Author: Srujan Gowda Sathiganahally Jagadeesha
+# Email: sathigan@usc.edu
+# Author: Rohit Milind Sonawane
+# Email: rsonawan@usc.edu
 ##################################################
-# Modified by Rowan Jacques-Hamilton 
 
 from torch import nn
 import torch
@@ -120,7 +123,8 @@ class ConvBlock(nn.Module):
 class DeepConvLSTM(nn.Module):
     def __init__(self, config):
         """
-        DeepConvLSTM model based on architecture suggested by Ordonez and Roggen (https://www.mdpi.com/1424-8220/16/1/115)
+        DeepConvLSTM model implementing stacked convolutional and recurrent blocks 
+        used for the analyses in Aulsebrook, Jacques-Hamilton, & Kempenaers (2023)
 
         :param config: config dictionary containing all settings needed to initialize DeepConvLSTM; these include:
             - no_lstm:              whether not to use an lstm

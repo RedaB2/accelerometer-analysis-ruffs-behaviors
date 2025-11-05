@@ -1,12 +1,13 @@
 ##################################################
 # All functions related to preprocessing and loading data
 ##################################################
-# Author: Marius Bock
-# Email: marius.bock(at)uni-siegen.de
-# Author: Alexander Hölzemann
-# Email: alexander.hoelzemann(at)uni-siegen.de
+# Author: Reda Boutayeb
+# Email: boutayeb@usc.edu
+# Author: Srujan Gowda Sathiganahally Jagadeesha
+# Email: sathigan@usc.edu
+# Author: Rohit Milind Sonawane
+# Email: rsonawan@usc.edu
 ##################################################
-# Modified by Rowan Jacques-Hamilton rjacques(at)orn.mpg.de
 
 import pandas as pd
 import numpy as np
@@ -56,4 +57,3 @@ def load_dataset(parameters):
     print("Full dataset with size: | {0} | ".format(data.shape))
 
     return data
-

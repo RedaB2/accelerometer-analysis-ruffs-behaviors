@@ -1,8 +1,12 @@
 ##################################################
 # All functions related to plotting and visualising data
 ##################################################
-# Author: Kristof Van Laerhoven
-# Email: kvl(at)eti.uni-siegen.de
+# Author: Reda Boutayeb
+# Email: boutayeb@usc.edu
+# Author: Srujan Gowda Sathiganahally Jagadeesha
+# Email: sathigan@usc.edu
+# Author: Rohit Milind Sonawane
+# Email: rsonawan@usc.edu
 ##################################################
 
 import matplotlib.pyplot as plt

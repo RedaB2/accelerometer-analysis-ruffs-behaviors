@@ -2,14 +2,14 @@
 #' Aulsebrook, Jacques-Hamilton, & Kempenaers (2023) Quantifying mating behaviour 
 #' using accelerometry and machine learning: challenges and opportunities.
 #' 
-#' https://github.com/rowanjh/behav-acc-ml
+#' https://github.com/RedaB2/accelerometer-analysis-ruffs-behaviors
 #'
 #' Purpose: 
 #'      This script runs supervised hidden markov models in cross-validation  
 #'      using the windowed dataset. The full dataset is used for the 'leave some  
 #'      individuals out' splits (LSIO), and a training set (70% of data) is used 
-#'      for the time-based split. Implementation is adapted from code provided 
-#'      in Leos-Barajas et al. 2017
+#'      for the time-based split. Implementation follows the modelling workflow 
+#'      documented for Aulsebrook, Jacques-Hamilton, & Kempenaers (2023).
 #'
 #' Notes: 
 #'      Transition windows are not excluded to keep the sequences consolidated
@@ -18,8 +18,6 @@
 #'      Feature selection was implemented manually and selected features are 
 #'      hard coded in the script 
 #'
-#' Date Created: 
-#'      May 2, 2023
 #' 
 #' Outputs: 
 #'      csv files with predictions for each cross-validation fold exported to:
@@ -349,5 +347,4 @@ capture.output(
     cat("\n======== Feature Selection Specification ==============\n"),
     print(fcbf_spec)
 )
-
 
