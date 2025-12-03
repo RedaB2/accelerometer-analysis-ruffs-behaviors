@@ -1,5 +1,7 @@
 # Accelerometer Analysis of Ruff Behaviors
 
+![poster presentation day](IMG_0808.jpeg)
+
 ## Authors
 - Srujan Gowda Sathiganahally Jagadeesha — sathigan@usc.edu
 - Reda Boutayeb — boutayeb@usc.edu
